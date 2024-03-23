@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>test2</title>
+</head>
+
+<body>
+  <input type="number" id="input">
+  <input type="text" id="result">
+  <button id="btnRequest">请求</button>
+  <button id="btnClear">清空</button>
+  <button onclick="f()">跳转</button>
+
+  <script src="main.js"></script>
+  <script>
+    Observer[1] = function (msg) {
+      result.value = JSON.stringify(msg)
+    }
+    Observer[2] = function (msg) {
+      result.value = JSON.stringify(msg)
+    }
+
+    btnRequest.onclick = function () {
+      if (1 != input.value && 2 != input.value) {
+        input.value = 1
+      }
+      Request(input.value)
+    }
+
+    btnClear.onclick = function () {
+      result.value = ''
+    }
+
+    function f() {
+      location.href = './test.html';
+    }
+  </script>
+</body>
+
+</html>
