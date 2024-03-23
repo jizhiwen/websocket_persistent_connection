@@ -139,6 +139,8 @@ function OnHandleWorkerGetCamera() {
         ws.send(JSON.stringify({
             evt: 1 // camera
         }))
+
+        port.postMessage({evt: 1, body: {type: "camera", error: "none"}})
         return
     }
 
@@ -150,6 +152,8 @@ function OnHandleWorkerGetRadar() {
         ws.send(JSON.stringify({
             evt: 2 // radar
         }))
+
+        port.postMessage({evt: 1, body: {type: "radar", error: "none"}})
         return
     }
 
